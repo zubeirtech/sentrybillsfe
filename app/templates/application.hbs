@@ -12,13 +12,25 @@
           <div class="ten wide column">
               <br>
               <br>
-              {{!--Auth --}}
+              {{#if session.isAuthenticated}}
+                <a {{action 'invalidateSession'}}>
+                  <button class="ui green button">Loggout</button>
+                </a>
+              {{else}}
+                {{#link-to 'login'}}
+                  <button class="ui green button">Login</button>
+                {{/link-to}}
+              {{/if}}
+              <br>
+              <br>
               {{outlet}}
           </div>
           <div class="one wide column"></div>
       </div>
 
 {{/if}}
+
+
 {{#if (media 'isTablet')}}
   <div class="ui inverted segment">
     <div class="ui inverted stackable menu">
@@ -31,10 +43,11 @@
   </div>
   <br>
   <br>
-  {{!-- Auth --}}
+  
   {{outlet}}
-
 {{/if}}
+
+
 {{#if (media 'isMobile')}}
   <div class="ui inverted segment">
     <div class="ui inverted stackable  menu">
