@@ -1,4 +1,4 @@
-export default function(/* server */) {
+export default function(server) {
 
   /*
     Seed your development database using your factories.
@@ -6,4 +6,8 @@ export default function(/* server */) {
   */
 
   // server.createList('post', 10);
+  let bills = server.createList('bill', 10);
+  server.create('user', {
+    bills
+  })
 }
