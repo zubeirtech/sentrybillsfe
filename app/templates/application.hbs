@@ -23,6 +23,8 @@
               {{/if}}
               <br>
               <br>
+              <br>
+              <br>
               {{outlet}}
           </div>
           <div class="one wide column"></div>
@@ -42,8 +44,19 @@
     </div>
   </div>
   <br>
+  <div class="ui container">
+    {{#if session.isAuthenticated}}
+      <a {{action 'invalidateSession'}}>
+        <button class="ui green button">Loggout</button>
+      </a>
+    {{else}}
+      {{#link-to 'login'}}
+        <button class="ui green button">Login</button>
+      {{/link-to}}
+    {{/if}}
+  </div>
   <br>
-  
+  <br>
   {{outlet}}
 {{/if}}
 
@@ -61,7 +74,17 @@
     </div>
   </div>
   <br>
+  <div class="ui container">
+    {{#if session.isAuthenticated}}
+      <a {{action 'invalidateSession'}}>
+        <button class="ui green button">Loggout</button>
+      </a>
+    {{else}}
+      {{#link-to 'login'}}
+        <button class="ui green button">Login</button>
+      {{/link-to}}
+    {{/if}}
+  </div>
   <br>
-  {{!-- Auth --}}
   {{outlet}}
 {{/if}}
