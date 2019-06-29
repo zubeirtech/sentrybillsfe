@@ -1,5 +1,54 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{#if (media 'isDesktop')}}
+      <div class="ui grid">
+          <div class="five wide column">
+            <div class="ui visible massive very wide inverted vertical sidebar menu">
+                <a href="/" class="item" id="main_heading">Sentrybills</a>
+                {{#link-to "bills.new" class="item"}}
+                    Add a new Bill <i class="plus icon"></i>
+                {{/link-to}}
+                <a href="https://zubeirtech.herokuapp.com/" target="_blank" class="item">Check out my other projects</a>
+            </div>
+          </div>
+          <div class="ten wide column">
+              <br>
+              <br>
+              {{!--Auth --}}
+              {{outlet}}
+          </div>
+          <div class="one wide column"></div>
+      </div>
 
-{{outlet}}
+{{/if}}
+{{#if (media 'isTablet')}}
+  <div class="ui inverted segment">
+    <div class="ui inverted stackable menu">
+      <a href="/" class="item" id="main_heading">Sentrybills</a>
+      {{#link-to "bills.new" class="item"}}
+        <i class="plus icon"></i> Add a new Bill
+      {{/link-to}}
+      <a href="https://zubeirtech.herokuapp.com/" target="_blank" class="item">Check out my other projects</a>
+    </div>
+  </div>
+  <br>
+  <br>
+  {{!-- Auth --}}
+  {{outlet}}
+
+{{/if}}
+{{#if (media 'isMobile')}}
+  <div class="ui inverted segment">
+    <div class="ui inverted stackable  menu">
+      <a class="item" id="main_heading" href="/">
+        Sentrybills
+      </a>
+      {{#link-to "bills.new" class="item"}}
+        <i class="plus icon"></i> Add a new Bill
+      {{/link-to}}
+      <a href="https://zubeirtech.herokuapp.com/" target="_blank" class="item">Check out my other projects</a>
+    </div>
+  </div>
+  <br>
+  <br>
+  {{!-- Auth --}}
+  {{outlet}}
+{{/if}}
