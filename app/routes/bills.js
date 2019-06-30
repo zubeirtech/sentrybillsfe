@@ -4,9 +4,19 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 
 export default Route.extend(AuthenticatedRouteMixin, {
     session: service(),
+    toastr: service('toast'),
 
     model() {
-        console.log(this.session);
-        console.log(this.currentUser)
+        try {
+            return this.store.query('bill', { userId: this.session.data.authenticated.access_token });
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    afterModel(model) {
+        if (model.length === 0) {
+            this.toastr.info('No bills are existing, add new', 'Clear!')
+        }
     }
 });

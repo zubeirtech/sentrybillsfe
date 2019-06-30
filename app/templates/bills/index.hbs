@@ -1,19 +1,28 @@
-<div class="ui centered grid">
-  <div class="sixteen wide column">
-    <div class="ui raised center aligned  teal segment">
-      {{!-- PROGRESS BAR --}}
-      <div class="ui big form">
-        <div class="three fields">
-          <div class="field">
-            <label for="">Total</label>
-          </div>
-          <div class="field">
-            <label for="">Finished</label>
-          </div>
-          <div class="field">
-            <label for="">Next Payment</label>
+<div class="ui container">
+  <div class="ui centered grid">
+    <div class="sixteen wide column">
+      <div class="ui green segment">
+        {{!-- PROGRESS BAR --}}
+        <div class="ui big form">
+          <div class="three fields">
+            <div class="field">
+              <label for="">Total</label>
+            </div>
+            <div class="field">
+              <label for="">Finished</label>
+            </div>
+            <div class="field">
+              <label for="">Next Payment</label>
+            </div>
           </div>
         </div>
+        <br>
+        <br>
+        {{#link-to "bills.new"}}
+          <button class="ui inverted green button">
+            <i class="plus icon"></i> Add new Bill
+          </button>
+        {{/link-to}}
       </div>
     </div>
   </div>
