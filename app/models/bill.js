@@ -6,4 +6,5 @@ export default DS.Model.extend({
     due: DS.attr('date'),
     addToCal: DS.attr('boolean', { defaultValue: false }),
     balanced: DS.attr('boolean', { defaultValue: false }),
+    userId: DS.attr('string'),
 });
