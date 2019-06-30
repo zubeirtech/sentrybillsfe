@@ -14,7 +14,7 @@
               <br>
               {{#if session.isAuthenticated}}
                 <a {{action 'invalidateSession'}}>
-                  <button class="ui green button">Loggout</button>
+                  <button class="ui green button">Logout</button>
                 </a>
               {{else}}
                 {{#link-to 'login'}}
@@ -47,7 +47,7 @@
   <div class="ui container">
     {{#if session.isAuthenticated}}
       <a {{action 'invalidateSession'}}>
-        <button class="ui green button">Loggout</button>
+        <button class="ui green button">Logout</button>
       </a>
     {{else}}
       {{#link-to 'login'}}
@@ -77,7 +77,7 @@
   <div class="ui container">
     {{#if session.isAuthenticated}}
       <a {{action 'invalidateSession'}}>
-        <button class="ui green button">Loggout</button>
+        <button class="ui green button">Logout</button>
       </a>
     {{else}}
       {{#link-to 'login'}}

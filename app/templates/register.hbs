@@ -4,19 +4,20 @@
       <div class="ten wide column">
         <div class="ui green raised segment">
           <form class="ui form">
-            <div class="field">
+            <div class="required field">
               <label>E-mail</label>
-              {{input value=this.model.email type="text"   placeholder="Enter email..."}}
+              {{input value=this.model.email type="text" placeholder="Enter email..."}}
             </div>
-            <div class="field">
+            <div class="required field">
               <label>Enter Password</label>
-              {{input value=this.model.password type="password"   placeholder="Enter password..."}}
+              {{input value=this.model.password type="password"  placeholder="Enter password..."}}
             </div>
-            <div class="field">
+            <div class="required field">
               <label>Enter Password Again</label>
-              {{input value=this.secondPassword type="password"   placeholder="Enter second password..."}}
+              {{input value=this.secondPassword type="password"  placeholder="Enter second password..."}}
             </div>
-            <button class="ui inverted circular green button" type="submit" >Submit</button>
+            <br>
+            <button class="ui inverted circular green button" type="submit" {{action "register"}}>Submit</button>
           </form>
         </div>
       </div>
@@ -42,6 +43,7 @@
                 <label>Enter Password Again</label>
                 {{input value=this.secondPassword type="password"   placeholder="Enter second password..."}}
               </div>
+              <br>
               <button class="ui inverted circular green button" type="submit" >Submit</button>
             </form>
           </div>
@@ -67,6 +69,7 @@
                 <label>Enter Password Again</label>
                 {{input value=this.secondPassword type="password"  placeholder="Enter second password..."}}
               </div>
+              <br>
               <button class="ui inverted circular green button" type="submit">Submit</button>
             </form>
           </div>
