@@ -2,17 +2,27 @@
   <div class="ui centered grid">
     <div class="sixteen wide column">
       <div class="ui green segment">
-        {{!-- PROGRESS BAR --}}
+        <div class="label"><strong>Balanced Bills Progress</strong></div>
+        {{#ui-progress percent=this.percentage class="teal indicating" id="progress"}}
+          <div class="bar"></div>
+        {{/ui-progress}}
+        <br>
         <div class="ui big form">
           <div class="three fields">
             <div class="field">
               <label for="">Total</label>
+              <br>
+              <strong>{{this.total}}</strong>
             </div>
             <div class="field">
               <label for="">Finished</label>
+              <br>
+              <strong>{{this.filteredBalanced.length}} /{{this.model.length}}</strong>
             </div>
             <div class="field">
               <label for="">Next Payment</label>
+              <br>
+              <strong>{{this.closestBill.name}} - {{this.closestBill.due}}</strong>
             </div>
           </div>
         </div>

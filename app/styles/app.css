@@ -4,3 +4,14 @@ body {
 .ui {
     border-radius: 0px !important;
 }
+.indicating .teal {
+    border-radius: 0px !important;
+}
+
+#progress {
+    border-radius: 0px !important;
+}
+
+input {
+    border-radius: 0px !important; 
+}
