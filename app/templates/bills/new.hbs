@@ -12,9 +12,13 @@
               <label>How much is the bill</label>
               {{input value=this.model.total type="number"  placeholder="Enter total..."}}
             </div>
-            <div class="required field">
-              <label>When is it due</label>
-              {{input value=this.model.due type="date"  placeholder="Enter date..."}}
+            <div class="field">
+              <label>When is it due - <i>optional</i></label>
+              {{input value=this.model.due type="date"  placeholder="Enter note..."}}
+            </div>
+            <div class="field">
+              <label for="">Notes - <i>optional</i></label>
+              {{textarea value=this.model.note   placeholder="Enter date..."}}
             </div>
             <br>
             <div class="field">
