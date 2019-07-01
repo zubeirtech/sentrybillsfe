@@ -1,23 +1,31 @@
 {{#if (media 'isDesktop')}}
-  <div class="container">
+  <div class="ui container">
     <div class="ui centered grid">
       <div class="ten wide column">
         <div class="ui green raised segment">
           <form class="ui form">
             <div class="required field">
-              <label>E-mail</label>
-              {{input value=this.model.email type="text" placeholder="Enter email..."}}
+              <label>Name of the bill</label>
+              {{input value=this.model.name type="text" placeholder="Enter name..."}}
             </div>
             <div class="required field">
-              <label>Enter Password</label>
-              {{input value=this.model.password type="password"  placeholder="Enter password..."}}
+              <label>How much is the bill</label>
+              {{input value=this.model.total type="number"  placeholder="Enter total..."}}
             </div>
             <div class="required field">
-              <label>Enter Password Again</label>
-              {{input value=this.secondPassword type="password"  placeholder="Enter second password..."}}
+              <label>When is it due</label>
+              {{input value=this.model.due type="date"  placeholder="Enter date..."}}
             </div>
             <br>
-            <button class="ui inverted circular green button" type="submit" {{action "register"}}>Submit</button>
+            <div class="field">
+              <label>Add to Google Calendar as Event</label>
+              <div class="ui toggle checkbox">
+                {{input checked=this.model.addToCal type="checkbox" name="public"}}
+                <label>powererd by <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png" class="ui mini spaced image" alt="google imaeg"></label>
+              </div>
+            </div>
+            <br>
+            <button class="ui inverted circular green button" type="submit" {{action "new"}}>Submit</button>
           </form>
         </div>
       </div>
@@ -26,52 +34,68 @@
   </div>
 {{/if}}
 {{#if (media 'isTablet')}}
-  <div class="container">
+  <div class="ui container">
       <div class="ui centered grid">
         <div class="sixteen wide column">
           <div class="ui green raised segment">
             <form class="ui form">
-              <div class="field">
-                <label>E-mail</label>
-                {{input value=this.model.email type="text"  placeholder="Enter email..."}}
+            <div class="required field">
+              <label>Name of the bill</label>
+              {{input value=this.model.name type="text" placeholder="Enter email..."}}
+            </div>
+            <div class="required field">
+              <label>How much is the bill</label>
+              {{input value=this.model.total type="number"  placeholder="Enter total..."}}
+            </div>
+            <div class="required field">
+              <label>When is it due</label>
+              {{input value=this.due type="date"  placeholder="Enter date..."}}
+            </div>
+            <br>
+            <div class="field">
+              <label>Add to Google Calendar </label>
+              <div class="ui toggle checkbox">
+                {{input checked=this.model.addToCal type="checkbox" name="public"}}
+                <label>powererd by <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png" class="ui mini spaced image" alt="google imaeg"></label>
               </div>
-              <div class="field">
-                <label>Enter Password</label>
-                {{input value=this.model.password type="password"  placeholder="Enter password..."}}
-              </div>
-              <div class="field">
-                <label>Enter Password Again</label>
-                {{input value=this.secondPassword type="password"   placeholder="Enter second password..."}}
-              </div>
-              <br>
-              <button class="ui inverted circular green button" type="submit" >Submit</button>
-            </form>
+            </div>
+            <br>
+            <button class="ui inverted circular green button" type="submit" {{action "new"}}>Submit</button>
+           </form>
           </div>
         </div>
       </div>
   </div>
 {{/if}}
 {{#if (media 'isMobile')}}
-  <div class="container">
+  <div class="ui container">
       <div class="ui centered grid">
         <div class="sixteen wide column">
           <div class="ui green raised segment">
             <form class="ui form">
-              <div class="field">
-                <label>E-mail</label>
-                {{input value=this.model.email type="text"  placeholder="Enter email..."}}
+            <div class="required field">
+              <label>Name of the bill</label>
+              {{input value=this.model.name type="text" placeholder="Enter email..."}}
+            </div>
+            <div class="required field">
+              <label>How much is the bill</label>
+              {{input value=this.model.total type="number"  placeholder="Enter total..."}}
+            </div>
+            <div class="required field">
+              <label>When is it due</label>
+              {{input value=this.due type="date"  placeholder="Enter date..."}}
+            </div>
+            <br>
+            <div class="field">
+              <label>Add to Google Calendar </label>
+              <div class="ui toggle checkbox">
+                {{input checked=this.model.addToCal type="checkbox" name="public"}}
+                <label>powererd by <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png" class="ui mini spaced image" alt="google imaeg"></label>
               </div>
-              <div class="field">
-                <label>Enter Password</label>
-                {{input value=this.model.password type="password"   placeholder="Enter password..."}}
-              </div>
-              <div class="field">
-                <label>Enter Password Again</label>
-                {{input value=this.secondPassword type="password"  placeholder="Enter second password..."}}
-              </div>
-              <br>
-              <button class="ui inverted circular green button" type="submit">Submit</button>
-            </form>
+            </div>
+            <br>
+            <button class="ui inverted circular green button" type="submit" {{action "new"}}>Submit</button>
+          </form>
           </div>
         </div>
       </div>

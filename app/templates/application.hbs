@@ -3,6 +3,9 @@
           <div class="five wide column">
             <div class="ui visible massive very wide inverted vertical sidebar menu">
                 <a href="/" class="item" id="main_heading">Sentrybills</a>
+                {{#link-to "bills" class="item"}}
+                  Dashboard <i class="list icon"></i>
+                {{/link-to}}
                 {{#link-to "bills.new" class="item"}}
                     Add a new Bill <i class="plus icon"></i>
                 {{/link-to}}
