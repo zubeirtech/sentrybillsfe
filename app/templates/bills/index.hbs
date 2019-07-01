@@ -1,7 +1,7 @@
 <div class="ui container">
   <div class="ui centered grid">
     <div class="sixteen wide column">
-      <div class="ui green segment">
+      <div class="ui raised green segment">
         <div class="label"><strong>Balanced Bills Progress</strong></div>
         {{#ui-progress percent=this.percentage class="teal indicating" id="progress"}}
           <div class="bar"></div>
@@ -34,6 +34,34 @@
           </button>
         {{/link-to}}
       </div>
+    </div>
+  </div>
+  <div class="ui centered grid">
+    <div class="sixteen wide column">
+      {{#each model as |item|}}
+        <div class="ui red raised segment">
+          <div class="ui big form">
+            <div class="three fields">
+              <div class="field">
+                <label for="">Name</label>
+                {{item.name}}
+              </div>
+              <div class="field">
+                <label for="">Total</label>
+                {{item.total}}
+              </div>
+              <div class="field">
+                <label for="">Due</label>
+                {{item.due}}
+              </div>
+            </div>
+            <div class="field">
+              <label for="">Note</label>
+              {{item.note}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
     </div>
   </div>
 </div>

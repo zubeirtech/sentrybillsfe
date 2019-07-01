@@ -19,17 +19,23 @@ export default Route.extend(AuthenticatedRouteMixin, {
         if (model.length === 0) {
             this.toastr.info('No bills are existing, add new', 'Clear!')
         }
+        if (model.balanced) {
+            set(this, 'color', 'green');
+        } else {
+            set(this, 'color', 'green');
+        }
         // progress
         const filteredBalanced = model.filter(bill => bill.balanced);
         const num = filteredBalanced.length / model.length * 100;
         set(this, 'percentage', num);
 
         // total
-        const billNumbers = model.filter(bill => bill.total);
+        let sum = 0;
+        model.forEach(bill => {
+            sum += bill.total;
+        });
 
-        let total = billNumbers.reduce((pv, cv) => pv + cv, 0);
-
-        set(this, 'total', total);
+        set(this, 'total', sum);
 
         //next due 
         const dates = model.filter(bill => bill.due);
@@ -38,6 +44,6 @@ export default Route.extend(AuthenticatedRouteMixin, {
         let cBill = model.find(element => {
             return cDate === element.due;
         })
-        set(this, 'closestBill', cBill); 
+        set(this, 'closestBill', cBill);
     }
 });
