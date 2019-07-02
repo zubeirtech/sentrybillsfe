@@ -65,17 +65,17 @@
                       </label>
                     </div>
                   {{else}}
-                    {{#link-to "bills.edit" bill}}
                       <button class="ui violet inverted button" {{action "setToBalanced" bill}}>
                         <i class="check icon"></i>Balanced
                       </button>
-                    {{/link-to}}
                   {{/if}}
                 </div>
                 <div class="field">
-                  <button class="ui blue inverted button">
-                    <i class="write icon"></i>Edit Bill
-                  </button>
+                  {{#link-to "bills.edit" bill}}
+                    <button class="ui blue inverted button">
+                      <i class="write icon"></i>Edit Bill
+                    </button>
+                  {{/link-to}}
                 </div>
                 <div class="field">
                   <button class="ui red inverted button" {{action "deleteBill" bill}}>
