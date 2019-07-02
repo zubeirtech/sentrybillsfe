@@ -16,6 +16,17 @@
               <label>Enter Password Again</label>
               {{input value=this.secondPassword type="password"  placeholder="Enter second password..."}}
             </div>
+            <div class="field">
+              <label for="">Accept Terms and Conditions</label>
+              <div class="ui toggle checkbox">
+                {{input checked=this.confirm type="checkbox" name="public"}}
+                <label>
+                  {{#link-to "terms-and-condition"}}
+                    Terms and Conditions
+                  {{/link-to}}
+                </label>
+              </div>
+            </div>
             <br>
             <button class="ui inverted circular green button" type="submit" {{action "register"}}>Submit</button>
           </form>

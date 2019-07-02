@@ -6,7 +6,7 @@ export default Controller.extend({
     toastr: service('toast'),
     session: service(),
 
-    valid(email, password) {
+    valid(email, password, tac) {
         if(email === undefined){
             return false
         }
@@ -19,12 +19,16 @@ export default Controller.extend({
         if (password === "") {
             return false
         }
+        if (tac === false) {
+            this.toastr.warning('Please accepte Terms and Conditions', 'Warning!')
+            return false
+        }
         return true
     },
 
     actions: {
         async register() {
-            const val = this.valid(this.model.email, this.model.password);
+            const val = this.valid(this.model.email, this.model.password, this.confirm);
             if (val) {
                 if (this.secondPassword === this.model.password) {
                     try {
