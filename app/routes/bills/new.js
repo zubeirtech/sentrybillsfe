@@ -18,7 +18,6 @@ export default Route.extend({
           if (this.userHasEnteredData && !window.confirm('By leaving the form you are deleting changes, are you sure?')) {
             transition.abort();
           } else {
-            this.toastr.warning('Deleted form date', 'Warning!');
             window.location.href = '/bills';
             return true;
           }

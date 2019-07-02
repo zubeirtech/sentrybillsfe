@@ -8,21 +8,16 @@
         {{/ui-progress}}
         <br>
         <div class="ui big form">
-          <div class="three fields">
+          <div class="two fields">
             <div class="field">
               <label for="">Total</label>
               <br>
-              <strong>{{this.total}}</strong>
+              <strong>{{this.totalNum}}</strong>
             </div>
             <div class="field">
               <label for="">Finished</label>
               <br>
-              <strong>{{this.filteredBalanced.length}} /{{this.model.length}}</strong>
-            </div>
-            <div class="field">
-              <label for="">Next Payment</label>
-              <br>
-              <strong>{{this.closestBill.name}} - {{this.closestBill.due}}</strong>
+              <strong>{{this.balanced}}/ {{this.model.length}}</strong>
             </div>
           </div>
         </div>
@@ -38,26 +33,53 @@
   </div>
   <div class="ui centered grid">
     <div class="sixteen wide column">
-      {{#each model as |item|}}
+      {{#each model as |bill|}}
         <div class="ui red raised segment">
           <div class="ui big form">
             <div class="three fields">
               <div class="field">
                 <label for="">Name</label>
-                {{item.name}}
+                {{bill.name}}
               </div>
               <div class="field">
                 <label for="">Total</label>
-                {{item.total}}
+                {{bill.total}}
               </div>
               <div class="field">
                 <label for="">Due</label>
-                {{item.due}}
+                {{bill.due}}
               </div>
             </div>
             <div class="field">
               <label for="">Note</label>
-              {{item.note}}
+              {{bill.note}}
+            </div>
+            <div class="three fields">
+              <div class="field">
+                {{#if bill.balanced}}
+                  <div class="field">
+                    <label for="">
+                      <i class="green check icon"></i> Balanced
+                    </label>
+                  </div>
+                {{else}}
+                  {{#link-to "bills.edit" bill}}
+                    <button class="ui violet inverted button" {{action "setToBalanced" bill}}>
+                      <i class="check icon"></i>Balanced
+                    </button>
+                  {{/link-to}}
+                {{/if}}
+              </div>
+              <div class="field">
+                <button class="ui blue inverted button">
+                  <i class="write icon"></i>Edit Bill
+                </button>
+              </div>
+              <div class="field">
+                <button class="ui red inverted button">
+                  <i class="trash icon"></i>Delete Bill
+                </button>
+              </div>
             </div>
           </div>
         </div>

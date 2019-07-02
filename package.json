@@ -57,6 +57,8 @@
     "node": "6.* || 8.* || >= 10.*"
   },
   "dependencies": {
-    "faker": "^4.1.0"
+    "ember-controller-lifecycle": "^1.0.0",
+    "faker": "^4.1.0",
+    "nearest-date": "^1.0.1"
   }
 }
