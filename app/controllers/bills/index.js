@@ -5,6 +5,7 @@ import { inject as service } from '@ember/service';
 
 export default Controller.extend({
     toastr: service('toast'),
+    session: service(),
     totalNum: 0,
     setProgressAndFinished(model) {
         let inc = 0;
@@ -19,6 +20,7 @@ export default Controller.extend({
     },
 
     setup(model) {
+
         if (model.length === 0) {
             this.toastr.info('No bills are existing, add new', 'Clear!')
         }
@@ -65,6 +67,14 @@ export default Controller.extend({
                 await bill.destroyRecord();
                 this.setProgressAndFinished(this.model);
                 this.toastr.success('Bill is deleted', 'Nice!')
+            } catch (error) {
+                console.log(error);
+            }
+        },
+        async query() {
+            try {
+                let bills = await this.store.query('bill', { name: this.params, userId: this.session.data.authenticated.access_token });
+                set(this, 'model', bills);
             } catch (error) {
                 console.log(error);
             }
