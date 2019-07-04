@@ -42,6 +42,9 @@
   <div class="ui inverted segment">
     <div class="ui inverted stackable menu">
       <a href="/" class="item" id="main_heading"><img src="https://imgur.com/u4gO1qX.png" alt=""></a>
+      {{#link-to "bills" class="item"}}
+        Dashboard <i class="list icon"></i>
+      {{/link-to}}
       {{#link-to "bills.new" class="item"}}
         <i class="plus icon"></i> Add a new Bill
       {{/link-to}}
@@ -72,6 +75,9 @@
       <a class="item" id="main_heading" href="/">
         <img src="https://imgur.com/u4gO1qX.png" alt="">
       </a>
+      {{#link-to "bills" class="item"}}
+        Dashboard <i class="list icon"></i>
+      {{/link-to}}
       {{#link-to "bills.new" class="item"}}
         <i class="plus icon"></i> Add a new Bill
       {{/link-to}}
