@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:500&display=swap');
+
 body {
-    background: #d9e0e7
+    background: #d9e0e7;
+    font-family: 'Poppins', sans-serif;
 }
 .ui {
     border-radius: 0px !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 .indicating .teal {
     border-radius: 0px !important;
