@@ -70,6 +70,10 @@ export default Controller.extend({
                                 set(this, 'confirm', true);
                                 this.transitionToRoute('/bills');
                         }
+                        await this.model.save();
+                        this.toastr.success('Added new Bill', 'Success!');
+                        set(this, 'confirm', true);
+                        this.transitionToRoute('/bills');
                     } else {
                         this.toastr.warning('Date is in the past or undefined' ,'Warning')
                     }
