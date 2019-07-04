@@ -5,6 +5,7 @@ import { set } from '@ember/object';
 export default Controller.extend({
     toastr: service('toast'),
     session: service(),
+    loader: false,
 
     valid(email, password, tac) {
         if(email === undefined){
@@ -32,7 +33,8 @@ export default Controller.extend({
             if (val) {
                 if (this.secondPassword === this.model.password) {
                     try {
-                        await this.model.save()
+                        set(this, 'loader', true);
+                        await this.model.save();
                         let { email, password } = this.model;
                         this.get('session').authenticate('authenticator:oauth2', email, password).catch((reason) => {
                           this.set('errorMessage', reason.error || reason);
