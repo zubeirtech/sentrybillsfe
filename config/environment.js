@@ -35,6 +35,9 @@ module.exports = function(environment) {
 
   ENV['ember-simple-auth'] = {
     routeAfterAuthentication: '/bills',
+    serverTokenEndpoint:  'https://sentrybillsapi.herokuapp.com/token',
+    resourceName:         'business',
+    crossOriginWhitelist: ['https://sentrybillsapi.herokuapp.com/token']
   };
 
   if (environment === 'development') {
