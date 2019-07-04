@@ -41,6 +41,7 @@ export default Controller.extend({
                         });
                         this.toastr.success('Successfully added new user', 'Nice!');
                     } catch (error) {
+                        set(this, 'loader', false);
                         console.log(error);
                         this.toastr.error('Please use different Email', 'Email already exists!');
                         set(this.model, 'password', '');
@@ -48,9 +49,11 @@ export default Controller.extend({
                     }
 
                 } else {
+                    set(this, 'loader', false);
                     this.toastr.error('Passwords dont match', 'Error')
                 }
             } else {
+                set(this, 'loader', false);
                 this.toastr.error('Please fill in a fields', 'Error');
             }
         }
