@@ -14,8 +14,7 @@ export default Controller.extend({
         async confirmDelete() {
             try {
                 let id =  this.session.data.authenticated.access_token;
-                let user = await this.store.queryRecord('user', { id })
-                console.log(user);
+                let user = await this.store.queryRecord('user', { id });
                 await user.destroyRecord();
                 this.get('session').invalidate();
                 this.toastr.info('Account is successfully deleted', 'Info')
