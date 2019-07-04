@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.JSONAPIAdapter.extend({
-    host: 'http://sentrybillsapi.herokuapp.com',
+    host: 'http://localhost:3000',
     // urlForQueryRecord(query) {
     //     if (query.me) {
     //       delete query.me;

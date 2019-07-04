@@ -21,6 +21,24 @@
                 <a {{action 'invalidateSession'}}>
                   <button class="ui green button">Logout</button>
                 </a>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                {{#if deleteConfirm}}
+                  <div class="ui red compact segment">
+                    By deleting this account you are deleting every bill of yours. Are you sure?<br><br>
+                    <button class="ui red button" {{action "confirmDelete"}}>
+                      <i class="trash icon"></i> Delete Account
+                    </button>
+                    <button class="ui inverted primary button" {{action (mut deleteConfirm) false}}>
+                      Cancel
+                    </button>
+                  </div>
+                {{else}}
+                  <button class="ui red button" {{action (mut deleteConfirm) true}}>
+                    <i class="trash icon"></i> Delete Account
+                  </button>
+                {{/if}}
               {{else}}
                 {{#link-to 'login'}}
                   <button class="ui green button">Login</button>
