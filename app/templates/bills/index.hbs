@@ -38,8 +38,6 @@
   </div>
   <div class="ui centered grid">
     <div class="sixteen wide column">
-        <div style="height: 600px" >
-          {{#ember-scrollable autoHide=false}}
           {{#each model as |bill|}}
             {{#ui-accordion class="fluid styled"}}
               <div class="title">
@@ -100,8 +98,6 @@
               </div>
             {{/ui-accordion}} 
           {{/each}}
-          {{/ember-scrollable}}
-        </div>
     </div>
   </div>
 </div>
