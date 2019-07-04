@@ -33,9 +33,6 @@ export default Controller.extend({
                     let currDate = d.toISOString();
                     if(currDate < this.model.due || this.model.due === undefined) {
                         if (this.model.addToCal) {
-                            if (this.model.due === undefined || this.model.due === "") {
-                                this.toastr.warning('You activated notfication without a date, please add a date', 'Warning')
-                            } else {
                                 let result = await Notification.requestPermission();
                                 if (result === 'denied') {
                                     this.toastr.info('Notification is disabled', 'Info');
@@ -72,7 +69,6 @@ export default Controller.extend({
                                 this.toastr.success('Added new Bill', 'Success!');
                                 set(this, 'confirm', true);
                                 this.transitionToRoute('/bills');
-                            }
                         }
                     } else {
                         this.toastr.warning('Date is in the past or undefined' ,'Warning')

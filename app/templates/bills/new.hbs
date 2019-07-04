@@ -57,6 +57,10 @@
               {{input value=this.due type="datetime-local"  placeholder="Enter date..."}}
             </div>
             <div class="field">
+              <label for="">Notes - <i>optional</i></label>
+              {{textarea value=this.model.note   placeholder="Enter date..."}}
+            </div>
+            <div class="field">
               <label>Send notification</label>
               <div class="ui toggle checkbox">
                 {{input checked=this.model.addToCal type="checkbox" name="public"}}
@@ -89,6 +93,10 @@
             <div class="required field">
               <label>When is it due</label>
               {{input value=this.due type="datetime-local"  placeholder="Enter date..."}}
+            </div>
+            <div class="field">
+              <label for="">Notes - <i>optional</i></label>
+              {{textarea value=this.model.note   placeholder="Enter date..."}}
             </div>
             <div class="field">
               <label>Send notification</label>
