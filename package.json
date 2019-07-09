@@ -16,7 +16,8 @@
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test",
-    "proxy": "ember server --proxy https://sentrybillsapi.herokuapp.com"
+    "proxyProduction": "ember server --proxy https://sentrybillsapi.herokuapp.com",
+    "proxyLocal": "ember server --proxy http://localhost:3000"
   },
   "devDependencies": {
     "@ember/jquery": "^0.5.2",
