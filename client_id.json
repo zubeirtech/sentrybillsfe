@@ -1,0 +1,18 @@
+{
+    "web": {
+        "client_id": "229809145242-t98uas74drsmiv12d38514um31tgrrr5.apps.googleusercontent.com",
+        "project_id": "sentrybills-246213",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "mRZ6NDPtT4rqJSYv-yPh_ihX",
+        "redirect_uris": [
+            "https://sentrybills.herokuapp.com/dashboard",
+            "http://localhost:4200/dashboard"
+        ],
+        "javascript_origins": [
+            "http://localhost:4200",
+            "https://sentrybills.herokuapp.com"
+        ]
+    }
+}
