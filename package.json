@@ -59,6 +59,7 @@
   },
   "dependencies": {
     "ember-controller-lifecycle": "^1.0.0",
+    "ember-noscript": "^3.0.0",
     "faker": "^4.1.0",
     "nearest-date": "^1.0.1"
   }
