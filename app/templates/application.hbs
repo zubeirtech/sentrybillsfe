@@ -1,62 +1,61 @@
-{{#if (media 'isDesktop')}}
-      <div class="ui grid">
-          <div class="five wide column">
-            <div class="ui visible massive very wide inverted vertical sidebar menu">
-                <a href="/" class="item" id="main_heading">
-                <img src="https://imgur.com/u4gO1qX.png" alt="">
-                </a>
-                {{#link-to "bills" class="item"}}
-                  Dashboard <i class="list icon"></i>
-                {{/link-to}}
-                {{#link-to "bills.new" class="item"}}
-                    Add a new Bill <i class="plus icon"></i>
-                {{/link-to}}
-                <a href="https://zubeirtech.herokuapp.com/" target="_blank" class="item">Check out my other projects</a>
-            </div>
-          </div>
-          <div class="ten wide column">
-              <br>
-              <br>
-              {{#if session.isAuthenticated}}
-                <a {{action 'invalidateSession'}}>
-                  <button class="ui green button">Logout</button>
-                </a>
-                &nbsp;
-                &nbsp;
-                &nbsp;
-                {{#if deleteConfirm}}
-                  <div class="ui red compact segment">
-                    By deleting this account you are deleting every bill of yours. Are you sure?<br><br>
-                    <button class="ui red button" {{action "confirmDelete"}}>
-                      <i class="trash icon"></i> Delete Account
-                    </button>
-                    <button class="ui inverted primary button" {{action (mut deleteConfirm) false}}>
-                      Cancel
-                    </button>
-                  </div>
-                {{else}}
-                  <button class="ui red button" {{action (mut deleteConfirm) true}}>
-                    <i class="trash icon"></i> Delete Account
-                  </button>
-                {{/if}}
-              {{else}}
-                {{#link-to 'login'}}
-                  <button class="ui green button">Login</button>
-                {{/link-to}}
-              {{/if}}
-              <br>
-              <br>
-              <br>
-              <br>
-              {{outlet}}
-          </div>
-          <div class="one wide column"></div>
+{{#if (media "isDesktop")}}
+  <div class="ui grid">
+    <div class="five wide column">
+      <div class="ui visible massive very wide inverted vertical sidebar menu">
+        <a href="/" class="item" id="main_heading">
+          <img src="https://imgur.com/u4gO1qX.png" alt="">
+        </a>
+        {{#link-to "bills" class="item"}}
+          Dashboard <i class="list icon"></i>
+        {{/link-to}}
+        {{#link-to "bills.new" class="item"}}
+          Add a new Bill <i class="plus icon"></i>
+        {{/link-to}}
+        <a href="https://zubeirtech.herokuapp.com/" target="_blank"  rel="noopener" class="item">Check out my other projects</a>
       </div>
-
+    </div>
+    <div class="ten wide column">
+      <br>
+      <br>
+      {{#if session.isAuthenticated}}
+        <a {{action "invalidateSession"}} role="button" class="ui green button">
+          Logout
+        </a>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        {{#if deleteConfirm}}
+          <div class="ui red compact segment">
+            By deleting this account you are deleting every bill of yours. Are you sure?<br><br>
+            <button class="ui red button" {{action "confirmDelete"}}>
+              <i class="trash icon"></i> Delete Account
+            </button>
+            <button class="ui inverted primary button" {{action (mut deleteConfirm) false}}>
+              Cancel
+            </button>
+          </div>
+        {{else}}
+          <button class="ui red button" {{action (mut deleteConfirm) true}}>
+            <i class="trash icon"></i> Delete Account
+          </button>
+        {{/if}}
+      {{else}}
+        {{#link-to "login"}}
+          <button class="ui green button">Login</button>
+        {{/link-to}}
+      {{/if}}
+      <br>
+      <br>
+      <br>
+      <br>
+      {{outlet}}
+    </div>
+    <div class="one wide column"></div>
+  </div>
 {{/if}}
 
 
-{{#if (media 'isTablet')}}
+{{#if (media "isTablet")}}
   <div class="ui inverted segment">
     <div class="ui inverted stackable menu">
       <a href="/" class="item" id="main_heading"><img class="ui small image" src="https://imgur.com/u4gO1qX.png" alt=""></a>
@@ -66,38 +65,38 @@
       {{#link-to "bills.new" class="item"}}
         <i class="plus icon"></i> Add a new Bill
       {{/link-to}}
-      <a href="https://zubeirtech.herokuapp.com/" target="_blank" class="item">Check out my other projects</a>
+      <a href="https://zubeirtech.herokuapp.com/" target="_blank"  rel="noopener" class="item">Check out my other projects</a>
     </div>
   </div>
   <br>
   <div class="ui container">
     {{#if session.isAuthenticated}}
-                <a {{action 'invalidateSession'}}>
-                  <button class="ui green button">Logout</button>
-                </a>
-                &nbsp;
-                &nbsp;
-                &nbsp;
-                {{#if deleteConfirm}}
-                  <div class="ui red compact segment">
-                    By deleting this account you are deleting every bill of yours. Are you sure?<br><br>
-                    <button class="ui red button" {{action "confirmDelete"}}>
-                      <i class="trash icon"></i> Delete Account
-                    </button>
-                    <button class="ui inverted primary button" {{action (mut deleteConfirm) false}}>
-                      Cancel
-                    </button>
-                  </div>
-                {{else}}
-                  <button class="ui red button" {{action (mut deleteConfirm) true}}>
-                    <i class="trash icon"></i> Delete Account
-                  </button>
-                {{/if}}
-              {{else}}
-                {{#link-to 'login'}}
-                  <button class="ui green button">Login</button>
-                {{/link-to}}
-              {{/if}}
+      <a {{action "invalidateSession"}} role="button" class="ui green button">
+        Logout
+      </a>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      {{#if deleteConfirm}}
+        <div class="ui red compact segment">
+          By deleting this account you are deleting every bill of yours. Are you sure?<br><br>
+          <button class="ui red button" {{action "confirmDelete"}}>
+            <i class="trash icon"></i> Delete Account
+          </button>
+          <button class="ui inverted primary button" {{action (mut deleteConfirm) false}}>
+            Cancel
+          </button>
+        </div>
+      {{else}}
+        <button class="ui red button" {{action (mut deleteConfirm) true}}>
+          <i class="trash icon"></i> Delete Account
+        </button>
+      {{/if}}
+    {{else}}
+      {{#link-to "login"}}
+        <button class="ui green button">Login</button>
+      {{/link-to}}
+    {{/if}}
   </div>
   <br>
   <br>
@@ -105,7 +104,7 @@
 {{/if}}
 
 
-{{#if (media 'isMobile')}}
+{{#if (media "isMobile")}}
   <div class="ui inverted segment">
     <div class="ui inverted stackable  menu">
       <a class="item" id="main_heading" href="/">
@@ -117,38 +116,38 @@
       {{#link-to "bills.new" class="item"}}
         <i class="plus icon"></i> Add a new Bill
       {{/link-to}}
-      <a href="https://zubeirtech.herokuapp.com/" target="_blank" class="item">Check out my other projects</a>
+      <a href="https://zubeirtech.herokuapp.com/" target="_blank"  rel="noopener" class="item">Check out my other projects</a>
     </div>
   </div>
   <br>
   <div class="ui container">
     {{#if session.isAuthenticated}}
-                <a {{action 'invalidateSession'}}>
-                  <button class="ui green button">Logout</button>
-                </a>
-                &nbsp;
-                &nbsp;
-                &nbsp;
-                {{#if deleteConfirm}}
-                  <div class="ui red compact segment">
-                    By deleting this account you are deleting every bill of yours. Are you sure?<br><br>
-                    <button class="ui red button" {{action "confirmDelete"}}>
-                      <i class="trash icon"></i> Delete Account
-                    </button>
-                    <button class="ui inverted primary button" {{action (mut deleteConfirm) false}}>
-                      Cancel
-                    </button>
-                  </div>
-                {{else}}
-                  <button class="ui red button" {{action (mut deleteConfirm) true}}>
-                    <i class="trash icon"></i> Delete Account
-                  </button>
-                {{/if}}
-              {{else}}
-                {{#link-to 'login'}}
-                  <button class="ui green button">Login</button>
-                {{/link-to}}
-              {{/if}}
+      <a {{action "invalidateSession"}} role="button" class="ui green button">
+        Logout
+      </a>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      {{#if deleteConfirm}}
+        <div class="ui red compact segment">
+          By deleting this account you are deleting every bill of yours. Are you sure?<br><br>
+          <button class="ui red button" {{action "confirmDelete"}}>
+            <i class="trash icon"></i> Delete Account
+          </button>
+          <button class="ui inverted primary button" {{action (mut deleteConfirm) false}}>
+            Cancel
+          </button>
+        </div>
+      {{else}}
+        <button class="ui red button" {{action (mut deleteConfirm) true}}>
+          <i class="trash icon"></i> Delete Account
+        </button>
+      {{/if}}
+    {{else}}
+      {{#link-to "login"}}
+        <button class="ui green button">Login</button>
+      {{/link-to}}
+    {{/if}}
   </div>
   <br>
   {{outlet}}

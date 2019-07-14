@@ -1,4 +1,4 @@
-{{#if (media 'isDesktop')}}
+{{#if (media "isDesktop")}}
   <div class="ui container">
     <div class="ui centered grid">
       <div class="ten wide column">
@@ -30,44 +30,13 @@
     </div>
   </div>
 {{/if}}
-{{#if (media 'isTablet')}}
+{{#if (media "isTablet")}}
   <div class="ui container">
-      <div class="ui centered grid">
-        <div class="sixteen wide column">
-          <div class="ui green raised segment">
-            <h1 class="ui header">Edit {{this.model.name}} Bill</h1>
-            <form class="ui form">
-            <div class="required field">
-              <label>Name of the bill</label>
-              {{input value=this.model.name type="text" placeholder="Enter email..."}}
-            </div>
-            <div class="required field">
-              <label>How much is the bill</label>
-              {{input value=this.model.total type="number"  placeholder="Enter total..."}}
-            </div>
-            <div class="field">
-              <label>When is it due - <i>optional</i></label>
-              {{input value=this.model.due type="datetime-local"  placeholder="Enter note..."}}
-            </div>
-            <div class="field">
-              <label for="">Notes - <i>optional</i></label>
-              {{textarea value=this.model.note   placeholder="Enter date..."}}
-            </div>
-            <br>
-            <button class="ui inverted circular green button" type="submit" {{action "editBill"}}>Submit</button>
-           </form>
-          </div>
-        </div>
-      </div>
-  </div>
-{{/if}}
-{{#if (media 'isMobile')}}
-  <div class="ui container">
-      <div class="ui centered grid">
-        <div class="sixteen wide column">
-          <div class="ui green raised segment">
-           <h1 class="ui header">Edit {{this.model.name}} Bill</h1>
-            <form class="ui form">
+    <div class="ui centered grid">
+      <div class="sixteen wide column">
+        <div class="ui green raised segment">
+          <h1 class="ui header">Edit {{this.model.name}} Bill</h1>
+          <form class="ui form">
             <div class="required field">
               <label>Name of the bill</label>
               {{input value=this.model.name type="text" placeholder="Enter email..."}}
@@ -87,8 +56,39 @@
             <br>
             <button class="ui inverted circular green button" type="submit" {{action "editBill"}}>Submit</button>
           </form>
-          </div>
         </div>
       </div>
+    </div>
+  </div>
+{{/if}}
+{{#if (media "isMobile")}}
+  <div class="ui container">
+    <div class="ui centered grid">
+      <div class="sixteen wide column">
+        <div class="ui green raised segment">
+          <h1 class="ui header">Edit {{this.model.name}} Bill</h1>
+          <form class="ui form">
+            <div class="required field">
+              <label>Name of the bill</label>
+              {{input value=this.model.name type="text" placeholder="Enter email..."}}
+            </div>
+            <div class="required field">
+              <label>How much is the bill</label>
+              {{input value=this.model.total type="number"  placeholder="Enter total..."}}
+            </div>
+            <div class="field">
+              <label>When is it due - <i>optional</i></label>
+              {{input value=this.model.due type="datetime-local"  placeholder="Enter note..."}}
+            </div>
+            <div class="field">
+              <label for="">Notes - <i>optional</i></label>
+              {{textarea value=this.model.note   placeholder="Enter date..."}}
+            </div>
+            <br>
+            <button class="ui inverted circular green button" type="submit" {{action "editBill"}}>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 {{/if}}

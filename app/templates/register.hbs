@@ -1,4 +1,4 @@
-{{#if (media 'isDesktop')}}
+{{#if (media "isDesktop")}}
   <div class="ui container">
     <div class="ui centered grid">
       <div class="ten wide column">
@@ -45,11 +45,11 @@
     </div>
   </div>
 {{/if}}
-{{#if (media 'isTablet')}}
+{{#if (media "isTablet")}}
   <div class="ui container">
-      <div class="ui centered grid">
-        <div class="sixteen wide column">
-          {{#if loader}}
+    <div class="ui centered grid">
+      <div class="sixteen wide column">
+        {{#if loader}}
           <div class="ui segment">
             <div class="ui active inverted dimmer">
               <div class="ui text loader">Adding user to Database</div>
@@ -87,15 +87,15 @@
             </form>
           </div>
         {{/if}}
-        </div>
       </div>
+    </div>
   </div>
 {{/if}}
-{{#if (media 'isMobile')}}
+{{#if (media "isMobile")}}
   <div class="ui container">
-      <div class="ui centered grid">
-        <div class="sixteen wide column">
-          {{#if loader}}
+    <div class="ui centered grid">
+      <div class="sixteen wide column">
+        {{#if loader}}
           <div class="ui segment">
             <div class="ui active inverted dimmer">
               <div class="ui text loader">Adding user to Database</div>
@@ -133,7 +133,7 @@
             </form>
           </div>
         {{/if}}
-        </div>
       </div>
+    </div>
   </div>
 {{/if}}

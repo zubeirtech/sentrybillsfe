@@ -1,7 +1,46 @@
 
-{{#if (media 'isDesktop')}}
+{{#if (media "isDesktop")}}
   <div class="ui grid">
     <div class="ten wide column">
+      {{#if loader}}
+        <div class="ui segment">
+          <div class="ui active inverted dimmer">
+            <div class="ui text loader">Setting up your dashboard</div>
+          </div>
+        </div>
+      {{else}}
+        <div class="ui green raised segment">
+          <h1 class="ui header">Login here</h1>
+          <form {{action "authenticate" on="submit"}} class="ui form">
+            <label for="identification">Username</label>
+            {{input id="identification" placeholder="Enter Username" value=identification class="ui input"}}
+            <br>
+            <br>
+            <label for="password">Password</label>
+            {{input id="password" placeholder="Enter Password" type="password" value=password class="ui input"}} 
+            <br>
+            <br>
+            <button class="ui inverted green circular button" type="submit">Login</button>
+            <br>
+            <br>
+            {{#link-to "register"}}
+              Sign Up!
+            {{/link-to}} if not registered yet.
+            {{#if errorMessage}}
+            {{/if}}
+          </form>
+        </div>
+      {{/if}}
+    </div>
+    <div class="six wide column">
+    </div>
+  </div>
+{{/if}}
+
+{{#if (media "isTablet")}}
+  <div class="ui container">
+    <div class="ui centered grid">
+      <div class="sixteen wide column">
         {{#if loader}}
           <div class="ui segment">
             <div class="ui active inverted dimmer">
@@ -9,106 +48,66 @@
             </div>
           </div>
         {{else}}
-      <div class="ui green raised segment">
-        <h1 class="ui header">Login here</h1>
-          <form {{action "authenticate" on="submit"}} class="ui form">
-            <label for="identification">Username</label>
-            {{input id="identification" placeholder="Enter Username" value=identification class="ui input"}}
-            <br>
-            <br>
-            <label for="password">Password</label>
-            {{input id="password" placeholder="Enter Password" type="password" value=password class="ui input"}} 
-            <br>
-            <br>
-            <button class="ui inverted green circular button" type="submit">Login</button>
-            <br>
-            <br>
-            {{#link-to "register"}}
-              Sign Up!
-            {{/link-to}} if not registered yet.
-            {{#if errorMessage}}
-            {{/if}}
-          </form>
-         </div>
+          <div class="ui green raised segment">
+            <h1 class="ui header">Login here</h1>
+            <form {{action "authenticate" on="submit"}} class="ui form">
+              <label for="identification">Username</label>
+              {{input id="identification" placeholder="Enter Username" value=identification class="ui input"}}
+              <br>
+              <br>
+              <label for="password">Password</label>
+              {{input id="password" placeholder="Enter Password" type="password" value=password class="ui input"}} 
+              <br>
+              <br>
+              <button class="ui inverted green circular button" type="submit">Login</button>
+              <br>
+              <br>
+              {{#link-to "register"}}
+                Sign Up!
+              {{/link-to}} if not registered yet.
+              {{#if errorMessage}}
+              {{/if}}
+            </form>
+          </div>
         {{/if}}
-
-    </div>
-    <div class="six wide column">
+      </div>
     </div>
   </div>
 {{/if}}
-
-{{#if (media 'isTablet')}}
-<div class="ui container">
-  <div class="ui centered grid">
-    <div class="sixteen wide column">
-      {{#if loader}}
+{{#if (media "isMobile")}}
+  <div class="ui container">
+    <div class="ui centered grid">
+      <div class="sixteen wide column">
+        {{#if loader}}
           <div class="ui segment">
             <div class="ui active inverted dimmer">
               <div class="ui text loader">Setting up your dashboard</div>
             </div>
           </div>
         {{else}}
-      <div class="ui green raised segment">
-        <h1 class="ui header">Login here</h1>
-          <form {{action "authenticate" on="submit"}} class="ui form">
-            <label for="identification">Username</label>
-            {{input id="identification" placeholder="Enter Username" value=identification class="ui input"}}
-            <br>
-            <br>
-            <label for="password">Password</label>
-            {{input id="password" placeholder="Enter Password" type="password" value=password class="ui input"}} 
-            <br>
-            <br>
-            <button class="ui inverted green circular button" type="submit">Login</button>
-            <br>
-            <br>
-            {{#link-to "register"}}
-              Sign Up!
-            {{/link-to}} if not registered yet.
-            {{#if errorMessage}}
-            {{/if}}
-          </form>
-         </div>
-        {{/if}}
-    </div>
-    </div>
-  </div>
-{{/if}}
-{{#if (media 'isMobile')}}
-<div class="ui container">
-  <div class="ui centered grid">
-    <div class="sixteen wide column">
-      {{#if loader}}
-          <div class="ui segment">
-            <div class="ui active inverted dimmer">
-              <div class="ui text loader">Setting up your dashboard</div>
-            </div>
+          <div class="ui green raised segment">
+            <h1 class="ui header">Login here</h1>
+            <form {{action "authenticate" on="submit"}} class="ui form">
+              <label for="identification">Username</label>
+              {{input id="identification" placeholder="Enter Username" value=identification class="ui input"}}
+              <br>
+              <br>
+              <label for="password">Password</label>
+              {{input id="password" placeholder="Enter Password" type="password" value=password class="ui input"}} 
+              <br>
+              <br>
+              <button class="ui inverted green circular button" type="submit">Login</button>
+              <br>
+              <br>
+              {{#link-to "register"}}
+                Sign Up!
+              {{/link-to}} if not registered yet.
+              {{#if errorMessage}}
+              {{/if}}
+            </form>
           </div>
-        {{else}}
-      <div class="ui green raised segment">
-        <h1 class="ui header">Login here</h1>
-          <form {{action "authenticate" on="submit"}} class="ui form">
-            <label for="identification">Username</label>
-            {{input id="identification" placeholder="Enter Username" value=identification class="ui input"}}
-            <br>
-            <br>
-            <label for="password">Password</label>
-            {{input id="password" placeholder="Enter Password" type="password" value=password class="ui input"}} 
-            <br>
-            <br>
-            <button class="ui inverted green circular button" type="submit">Login</button>
-            <br>
-            <br>
-            {{#link-to "register"}}
-              Sign Up!
-            {{/link-to}} if not registered yet.
-            {{#if errorMessage}}
-            {{/if}}
-          </form>
-         </div>
         {{/if}}
-    </div>
+      </div>
     </div>
   </div>
 {{/if}}

@@ -2,7 +2,7 @@ import ApplicationAdapter from './application';
 
 export default ApplicationAdapter.extend({
     
-    urlForCreateRecord(modelName, snapshot) {
+    urlForCreateRecord(/*modelName, snapshot*/) {
         return this._super(...arguments) + '/new';
     },    
 });
