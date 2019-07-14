@@ -5,8 +5,8 @@ module.exports = function(/* environment, appConfig */) {
   // supported properties
 
   return {
-    name: "frontend",
-    short_name: "frontend",
+    name: "Sentrybills",
+    short_name: "Sentrybills",
     description: "",
     start_url: "/",
     display: "standalone",
@@ -14,7 +14,7 @@ module.exports = function(/* environment, appConfig */) {
     theme_color: "#fff",
     icons: [
       {
-        src: "https://i.imgur.com/oB9AQ7o.png",
+        src: "https://i.imgur.com/f5MwXVV.png",
         sizes: "540x540",
         type: "image/png"
       }
