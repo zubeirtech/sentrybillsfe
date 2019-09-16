@@ -19,7 +19,6 @@
     "proxy": "ember server --proxy https://sentrybillsapi.herokuapp.com"
   },
   "devDependencies": {
-    "@ember/jquery": "^0.5.2",
     "@ember/optional-features": "^0.6.3",
     "broccoli-asset-rev": "^2.7.0",
     "ember-ajax": "^5.0.0",
